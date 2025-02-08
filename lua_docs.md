@@ -80,16 +80,32 @@ local Part_ID = Part.ID -- int
 - MemoryClass
 ```lua
 local Result = Memory.AOB_Scan("01 02 ?? 03 04 ?? 05")
+
 local Client_DLL = Memory.client_dll
+
 local DLL_Address = Memory:FindDLL("client.dll")
+
 local Float = Memory:ReadFloat(DLL_Address + 0x25)
 Memory:WriteFloat(DLL_Address + 0x25, 5)
+
 local Int = Memory:ReadInt(DLL_Address + 0x25)
 Memory:WriteInt(DLL_Address + 0x25, 5)
+
 local Byte = Memory:ReadByte(DLL_Address + 0x25)
 Memory:WriteByte(DLL_Address + 0x25, 5)
+
 local Bool = Memory:ReadBool(DLL_Address + 0x25)
 Memory:WriteBool(DLL_Address + 0x25, 5)
+
 local Pointer = Memory:ReadPointer(DLL_Address + 0x25)
 Memory:WritePointer(DLL_Address + 0x25, 5)
+
+local Vector = Memory:ReadVector(DLL_Address + 0x25)
+Memory:WriteVector(DLL_Address + 0x25, Vector3.new(25,25,25))
+
+local Vector2 = Memory:ReadVector2(DLL_Address + 0x25)
+Memory:WriteVector2(DLL_Address + 0x25, Vector2.new(25,25))
+
+local QAngle = Memory:ReadQAngle(DLL_Address + 0x25)
+Memory:WriteQAngle(DLL_Address + 0x25, QAngle.new(1,180,1))
 ```
