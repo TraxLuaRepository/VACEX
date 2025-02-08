@@ -77,3 +77,19 @@ local Position = Part.Position -- vector3
 local Name = Part.Name -- string
 local Part_ID = Part.ID -- int
 ```
+- MemoryClass
+```lua
+local Result = Memory.AOB_Scan("01 02 ?? 03 04 ?? 05")
+local Client_DLL = Memory.client_dll
+local DLL_Address = Memory:FindDLL("client.dll")
+local Float = Memory:ReadFloat(DLL_Address + 0x25)
+Memory:WriteFloat(DLL_Address + 0x25, 5)
+local Int = Memory:ReadInt(DLL_Address + 0x25)
+Memory:WriteInt(DLL_Address + 0x25, 5)
+local Byte = Memory:ReadByte(DLL_Address + 0x25)
+Memory:WriteByte(DLL_Address + 0x25, 5)
+local Bool = Memory:ReadBool(DLL_Address + 0x25)
+Memory:WriteBool(DLL_Address + 0x25, 5)
+local Pointer = Memory:ReadPointer(DLL_Address + 0x25)
+Memory:WritePointer(DLL_Address + 0x25, 5)
+```
